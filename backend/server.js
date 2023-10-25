@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import router from "./routes/taskRoute.js";
 import path from "path";
+import { fileURLToPath } from "url";
 
 //app config
 const app = express();
@@ -24,7 +25,8 @@ app.use("/api/",router);
 
 //bodyparser to get user inputs
 app.use(bodyParser.json());
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 
