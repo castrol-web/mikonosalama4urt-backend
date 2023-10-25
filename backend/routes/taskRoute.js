@@ -5,8 +5,7 @@ import Contact from "../FeedBack.js";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3"
 import dotenv from "dotenv";
 dotenv.config();
-import crypto from "crypto";
-import UserDetail from "../UserDetail.js";
+import crypto from "crypto";  //generating random bytes
 
 //router from express that is going to be used inside the server.js
 const router = express.Router()
