@@ -25,13 +25,11 @@ app.use("/api/",router);
 
 //bodyparser to get user inputs
 app.use(bodyParser.json());
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+app.use(express.static('/opt/render/project/src/backend/frontend/build'));
 
 app.get('*',function(req,res){
-  res.sendFile(path.join(__dirname,'frontend/build','index.html'));
+  res.sendFile(path.join('/opt/render/project/src/backend/frontend/build','index.html'));
 })
 
 //setting ejs as the view engine
